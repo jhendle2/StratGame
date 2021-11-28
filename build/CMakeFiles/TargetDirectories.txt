@@ -1,0 +1,3 @@
+/home/jonah/Documents/GitHub/strat/build/CMakeFiles/rebuild_cache.dir
+/home/jonah/Documents/GitHub/strat/build/CMakeFiles/edit_cache.dir
+/home/jonah/Documents/GitHub/strat/build/CMakeFiles/framework.dir

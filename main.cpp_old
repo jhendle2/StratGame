@@ -1,0 +1,172 @@
+#include <iostream> //for rand() method
+#include <SDL.h>
+#include <stdio.h>
+
+#include <board.h>
+#include <player.h>
+#include <spritesheet.h>
+
+#undef main
+
+#define SCREEN_X 800
+#define SCREEN_Y 600
+
+/*
+int main(int argc, char **args)
+{
+    SDL_Init(SDL_INIT_EVERYTHING);
+
+    SDL_Window *window = SDL_CreateWindow("Getting Started", SDL_WINDOWPOS_UNDEFINED,
+                                          SDL_WINDOWPOS_UNDEFINED, 800, 600, SDL_WINDOW_SHOWN);
+
+    SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, 0);
+
+    //Struct for handling events
+    SDL_Event input;
+
+    //Boolean to find out whether the game is stopped or not
+    //Of course, it will be false at start
+    bool quit = false;
+
+    //For selecting renderer's draw color
+    int r = 0, g = 255, b = 0;
+
+    while (!quit) //Same as while(quit == false)
+    {
+
+        //---Event polling method---
+        //It runs until the number of events to be polled gets to zero
+        while (SDL_PollEvent(&input) > 0)
+        {
+
+            //If the user did something which should
+            //result in quitting of the game then...
+            if (input.type == SDL_QUIT)
+            {
+                //...go out of the while loop
+                quit = true;
+            }
+            //If the user pressed any key then...
+            else if (input.type == SDL_KEYDOWN)
+            {
+
+                //...randomize the renderer's draw color
+                r = rand() % 255;
+                g = rand() % 255;
+                b = rand() % 255;
+            }
+        }
+
+        SDL_SetRenderDrawColor(renderer, r, g, b, 255);
+        SDL_RenderClear(renderer);
+        SDL_RenderPresent(renderer);
+    }
+
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+
+    return 0;
+}*/
+
+double player_x = 100.0, player_y = 100.0;
+double v_x, v_y;
+double v_max = 1.0;
+double friction = 0.99;
+
+void draw_player(SDL_Renderer* renderer, Player player)
+{
+    SDL_Rect rect;
+
+    // player.update(SCREEN_X, SCREEN_Y);
+    player.draw(renderer);
+
+    SDL_RenderPresent(renderer);
+}
+
+void draw(SDL_Renderer* renderer, Player player){
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
+    SDL_RenderClear(renderer);
+
+    draw_player(renderer, player);
+
+    SDL_Delay(1);
+}
+
+
+int main(int argc, char **args)
+{
+    SDL_Init(SDL_INIT_EVERYTHING);
+
+    SDL_Window *window = SDL_CreateWindow("Getting Started", SDL_WINDOWPOS_UNDEFINED,
+                                          SDL_WINDOWPOS_UNDEFINED, SCREEN_X, SCREEN_Y, SDL_WINDOW_SHOWN);
+
+    SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, 0);
+
+    //Struct for handling events
+    SDL_Event input;
+
+    //Boolean to find out whether the game is stopped or not
+    //Of course, it will be false at start
+    bool quit = false;
+
+    //For selecting renderer's draw color
+    int r = 0, g = 255, b = 0;
+
+    Board board = Board(5, 6);
+    std::cout << "rows=" << board.get_rows() << " cols=" << board.get_cols();
+
+    int SPEED = 5;
+
+    Player player = Player();
+    player.x = 100;
+    player.y = 100;
+    player.friction = 0.99;
+    player.vmax = 1.0;
+
+    char key_pressed = 0;
+
+    while (!quit) //Same as while(quit == false)
+    {
+        //---Event polling method---
+        //It runs until the number of events to be polled gets to zero
+        while (SDL_PollEvent(&input) > 0)
+        {
+            // char key_pressed = 0;
+
+            //If the user did something which should
+            //result in quitting of the game then...
+            if (input.type == SDL_QUIT)
+            {
+                //...go out of the while loop
+                quit = true;
+            }
+            //If the user pressed any key then...
+            else if (input.type == SDL_KEYDOWN)
+            {
+                key_pressed = (char)(input.key.keysym.sym);
+
+                if(key_pressed=='a') player.set_v(-1,0);
+                else if(key_pressed=='d') player.set_v(1,0);
+                else if(key_pressed=='w') player.set_v(0,-1);
+                else if(key_pressed=='s') player.set_v(0,1);
+                
+                
+            }
+        }
+
+        // SDL_SetRenderDrawColor(renderer, r, g, b, 255);
+        // SDL_RenderClear(renderer);
+        // SDL_RenderPresent(renderer);
+        player.update(SCREEN_X, SCREEN_Y);
+        draw(renderer, player);
+        std::cout << "(" << player.x << ", " << player.y << ") " << player.vx << ", " << player.vy << "\n";
+
+    }
+
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+
+    return 0;
+}
