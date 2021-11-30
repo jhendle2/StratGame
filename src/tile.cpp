@@ -7,10 +7,10 @@
 #include <SDL_image.h>
 
 Tile::Tile(){
-    this->icon = '?';
+    this->icon = '.';
     this->num_alt_textures = 0;
     strcpy(this->texture_path,"../img/empty.png");
-    strcpy(this->name, "empty");
+    strcpy(this->name, "air");
     this->texture = IMG_Load(texture_path);
     
 }
@@ -40,6 +40,21 @@ Tile::Tile(char icon, const char* name, const char* texture_path){
     std::cout<<"name="<<this->name<<" texture="<<this->texture_path<<"\n";
     
     this->texture = IMG_Load(new_path);   
+}
+
+Tile::Tile(char icon, const char* name, const char* texture_path, enum Tile_Type type){
+    this->icon = icon;
+    this->num_alt_textures = 0;
+    char new_path[100];
+    strcpy(this->name, name);
+    strcpy(new_path, "../img/");
+    strcat(new_path, texture_path);
+    strcat(new_path, ".png");
+    strcpy(this->texture_path,new_path);
+    std::cout<<"name="<<this->name<<" texture="<<this->texture_path<<"\n";
+    
+    this->type = type;
+    this->texture = IMG_Load(new_path);    
 }
 
 Tile::Tile(char icon, const char* texture_path, int num_alt_textures){

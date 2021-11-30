@@ -174,6 +174,58 @@ CMakeFiles/framework.dir/src/gamemenu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/framework.dir/src/gamemenu.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonah/Documents/GitHub/strat/src/gamemenu.cpp -o CMakeFiles/framework.dir/src/gamemenu.cpp.s
 
+CMakeFiles/framework.dir/src/weather.cpp.o: CMakeFiles/framework.dir/flags.make
+CMakeFiles/framework.dir/src/weather.cpp.o: ../src/weather.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonah/Documents/GitHub/strat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/framework.dir/src/weather.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/framework.dir/src/weather.cpp.o -c /home/jonah/Documents/GitHub/strat/src/weather.cpp
+
+CMakeFiles/framework.dir/src/weather.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/framework.dir/src/weather.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jonah/Documents/GitHub/strat/src/weather.cpp > CMakeFiles/framework.dir/src/weather.cpp.i
+
+CMakeFiles/framework.dir/src/weather.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/framework.dir/src/weather.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonah/Documents/GitHub/strat/src/weather.cpp -o CMakeFiles/framework.dir/src/weather.cpp.s
+
+CMakeFiles/framework.dir/src/daycycle.cpp.o: CMakeFiles/framework.dir/flags.make
+CMakeFiles/framework.dir/src/daycycle.cpp.o: ../src/daycycle.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonah/Documents/GitHub/strat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/framework.dir/src/daycycle.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/framework.dir/src/daycycle.cpp.o -c /home/jonah/Documents/GitHub/strat/src/daycycle.cpp
+
+CMakeFiles/framework.dir/src/daycycle.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/framework.dir/src/daycycle.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jonah/Documents/GitHub/strat/src/daycycle.cpp > CMakeFiles/framework.dir/src/daycycle.cpp.i
+
+CMakeFiles/framework.dir/src/daycycle.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/framework.dir/src/daycycle.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonah/Documents/GitHub/strat/src/daycycle.cpp -o CMakeFiles/framework.dir/src/daycycle.cpp.s
+
+CMakeFiles/framework.dir/src/actor.cpp.o: CMakeFiles/framework.dir/flags.make
+CMakeFiles/framework.dir/src/actor.cpp.o: ../src/actor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonah/Documents/GitHub/strat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/framework.dir/src/actor.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/framework.dir/src/actor.cpp.o -c /home/jonah/Documents/GitHub/strat/src/actor.cpp
+
+CMakeFiles/framework.dir/src/actor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/framework.dir/src/actor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jonah/Documents/GitHub/strat/src/actor.cpp > CMakeFiles/framework.dir/src/actor.cpp.i
+
+CMakeFiles/framework.dir/src/actor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/framework.dir/src/actor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonah/Documents/GitHub/strat/src/actor.cpp -o CMakeFiles/framework.dir/src/actor.cpp.s
+
+CMakeFiles/framework.dir/src/actors.cpp.o: CMakeFiles/framework.dir/flags.make
+CMakeFiles/framework.dir/src/actors.cpp.o: ../src/actors.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonah/Documents/GitHub/strat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/framework.dir/src/actors.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/framework.dir/src/actors.cpp.o -c /home/jonah/Documents/GitHub/strat/src/actors.cpp
+
+CMakeFiles/framework.dir/src/actors.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/framework.dir/src/actors.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jonah/Documents/GitHub/strat/src/actors.cpp > CMakeFiles/framework.dir/src/actors.cpp.i
+
+CMakeFiles/framework.dir/src/actors.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/framework.dir/src/actors.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonah/Documents/GitHub/strat/src/actors.cpp -o CMakeFiles/framework.dir/src/actors.cpp.s
+
 # Object files for target framework
 framework_OBJECTS = \
 "CMakeFiles/framework.dir/main.cpp.o" \
@@ -184,7 +236,11 @@ framework_OBJECTS = \
 "CMakeFiles/framework.dir/src/utils.cpp.o" \
 "CMakeFiles/framework.dir/src/tt.cpp.o" \
 "CMakeFiles/framework.dir/src/mapgen.cpp.o" \
-"CMakeFiles/framework.dir/src/gamemenu.cpp.o"
+"CMakeFiles/framework.dir/src/gamemenu.cpp.o" \
+"CMakeFiles/framework.dir/src/weather.cpp.o" \
+"CMakeFiles/framework.dir/src/daycycle.cpp.o" \
+"CMakeFiles/framework.dir/src/actor.cpp.o" \
+"CMakeFiles/framework.dir/src/actors.cpp.o"
 
 # External object files for target framework
 framework_EXTERNAL_OBJECTS =
@@ -198,9 +254,13 @@ framework: CMakeFiles/framework.dir/src/utils.cpp.o
 framework: CMakeFiles/framework.dir/src/tt.cpp.o
 framework: CMakeFiles/framework.dir/src/mapgen.cpp.o
 framework: CMakeFiles/framework.dir/src/gamemenu.cpp.o
+framework: CMakeFiles/framework.dir/src/weather.cpp.o
+framework: CMakeFiles/framework.dir/src/daycycle.cpp.o
+framework: CMakeFiles/framework.dir/src/actor.cpp.o
+framework: CMakeFiles/framework.dir/src/actors.cpp.o
 framework: CMakeFiles/framework.dir/build.make
 framework: CMakeFiles/framework.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jonah/Documents/GitHub/strat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable framework"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jonah/Documents/GitHub/strat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable framework"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/framework.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

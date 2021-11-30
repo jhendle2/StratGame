@@ -10,7 +10,9 @@ project (framework)
 # include_directories(src)
 # link_directories(src)
 
-add_executable(framework main.cpp src/board.cpp src/player.cpp src/spritesheet.cpp src/tile.cpp src/utils.cpp src/tt.cpp src/mapgen.cpp src/gamemenu.cpp)
+add_executable(framework main.cpp src/board.cpp src/player.cpp src/spritesheet.cpp src/tile.cpp
+src/utils.cpp src/tt.cpp src/mapgen.cpp src/gamemenu.cpp src/weather.cpp src/daycycle.cpp
+src/actor.cpp src/actors.cpp)
 # add_subdirectory(framework src)
 
 # For finding our SDL2 package!

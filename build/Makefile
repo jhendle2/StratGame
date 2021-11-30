@@ -150,6 +150,60 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/actor.o: src/actor.cpp.o
+
+.PHONY : src/actor.o
+
+# target to build an object file
+src/actor.cpp.o:
+	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/actor.cpp.o
+.PHONY : src/actor.cpp.o
+
+src/actor.i: src/actor.cpp.i
+
+.PHONY : src/actor.i
+
+# target to preprocess a source file
+src/actor.cpp.i:
+	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/actor.cpp.i
+.PHONY : src/actor.cpp.i
+
+src/actor.s: src/actor.cpp.s
+
+.PHONY : src/actor.s
+
+# target to generate assembly for a file
+src/actor.cpp.s:
+	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/actor.cpp.s
+.PHONY : src/actor.cpp.s
+
+src/actors.o: src/actors.cpp.o
+
+.PHONY : src/actors.o
+
+# target to build an object file
+src/actors.cpp.o:
+	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/actors.cpp.o
+.PHONY : src/actors.cpp.o
+
+src/actors.i: src/actors.cpp.i
+
+.PHONY : src/actors.i
+
+# target to preprocess a source file
+src/actors.cpp.i:
+	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/actors.cpp.i
+.PHONY : src/actors.cpp.i
+
+src/actors.s: src/actors.cpp.s
+
+.PHONY : src/actors.s
+
+# target to generate assembly for a file
+src/actors.cpp.s:
+	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/actors.cpp.s
+.PHONY : src/actors.cpp.s
+
 src/board.o: src/board.cpp.o
 
 .PHONY : src/board.o
@@ -176,6 +230,33 @@ src/board.s: src/board.cpp.s
 src/board.cpp.s:
 	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/board.cpp.s
 .PHONY : src/board.cpp.s
+
+src/daycycle.o: src/daycycle.cpp.o
+
+.PHONY : src/daycycle.o
+
+# target to build an object file
+src/daycycle.cpp.o:
+	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/daycycle.cpp.o
+.PHONY : src/daycycle.cpp.o
+
+src/daycycle.i: src/daycycle.cpp.i
+
+.PHONY : src/daycycle.i
+
+# target to preprocess a source file
+src/daycycle.cpp.i:
+	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/daycycle.cpp.i
+.PHONY : src/daycycle.cpp.i
+
+src/daycycle.s: src/daycycle.cpp.s
+
+.PHONY : src/daycycle.s
+
+# target to generate assembly for a file
+src/daycycle.cpp.s:
+	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/daycycle.cpp.s
+.PHONY : src/daycycle.cpp.s
 
 src/gamemenu.o: src/gamemenu.cpp.o
 
@@ -366,6 +447,33 @@ src/utils.cpp.s:
 	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/utils.cpp.s
 .PHONY : src/utils.cpp.s
 
+src/weather.o: src/weather.cpp.o
+
+.PHONY : src/weather.o
+
+# target to build an object file
+src/weather.cpp.o:
+	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/weather.cpp.o
+.PHONY : src/weather.cpp.o
+
+src/weather.i: src/weather.cpp.i
+
+.PHONY : src/weather.i
+
+# target to preprocess a source file
+src/weather.cpp.i:
+	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/weather.cpp.i
+.PHONY : src/weather.cpp.i
+
+src/weather.s: src/weather.cpp.s
+
+.PHONY : src/weather.s
+
+# target to generate assembly for a file
+src/weather.cpp.s:
+	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/weather.cpp.s
+.PHONY : src/weather.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -378,9 +486,18 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/actor.o"
+	@echo "... src/actor.i"
+	@echo "... src/actor.s"
+	@echo "... src/actors.o"
+	@echo "... src/actors.i"
+	@echo "... src/actors.s"
 	@echo "... src/board.o"
 	@echo "... src/board.i"
 	@echo "... src/board.s"
+	@echo "... src/daycycle.o"
+	@echo "... src/daycycle.i"
+	@echo "... src/daycycle.s"
 	@echo "... src/gamemenu.o"
 	@echo "... src/gamemenu.i"
 	@echo "... src/gamemenu.s"
@@ -402,6 +519,9 @@ help:
 	@echo "... src/utils.o"
 	@echo "... src/utils.i"
 	@echo "... src/utils.s"
+	@echo "... src/weather.o"
+	@echo "... src/weather.i"
+	@echo "... src/weather.s"
 .PHONY : help
 
 
