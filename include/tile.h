@@ -23,6 +23,7 @@ class Tile{
         char name[32];       
         char texture_path[100];
         int num_alt_textures;
+        int size_x=16, size_y=16;
         enum Tile_Type type=Tile_Type_None;
 
         Tile(char icon, const char* texture_path);

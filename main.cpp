@@ -9,11 +9,17 @@
 #include <spritesheet.h>
 #include <tt.h>
 
+#include <exception>      // std::set_terminate
+
 #include <mapgen.h>
 // #include <gamemenu.h>
 #include <weather.h>
 #include <daycycle.h>
+// #include <actor.h>
+// #include <vector>
 
+// #include <item.h>
+// #include <inventory.h>
 
 #undef main
 
@@ -27,6 +33,7 @@ Daycycle current_daycycle = DAYCYCLE_NOON;
 // Menu menu1 = Menu(5);
 Board board1 = Board(1, 1);
 Board overlay_board = Board(1, 1);
+// Inventory GameInventory = Inventory();
 
 void Game_init(){
     srand(time(NULL));
@@ -35,30 +42,42 @@ void Game_init(){
     load_Tiles();
 }
 
+void update_actors(){
+
+}
+
 void draw_boards(SDL_Renderer* renderer){
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
-    SDL_RenderClear(renderer);
 
-    // board1.draw(renderer, SCREEN_X, SCREEN_Y);
+    // SCROLL MAP MODE
     board1.draw_slice(renderer, 0, 0, SCREEN_X, SCREEN_Y);
     overlay_board.draw_slice(renderer, 0, 0, SCREEN_X, SCREEN_Y);
-    // menu1.draw(renderer, 540, 20);
-    // SDL_RenderPresent(renderer);
-    // draw_weather(renderer, current_weather, SCREEN_X, SCREEN_Y);
-    // SDL_RenderPresent(renderer);
+
+    // FULL MAP MODE
+    // board1.draw(renderer, SCREEN_X, SCREEN_Y);
+    // overlay_board.draw(renderer, SCREEN_X, SCREEN_Y);
 }
 
 void draw(SDL_Renderer* renderer){
-    bool update_weather = weather_timer();
+    static int actor_counter = 0;
+
     SDL_RenderClear(renderer);
+
+    // if(actor_counter == ACTOR_UPDATE_COUNTER){
+    //     actor_counter = 0;
+    //     update_actors();
+    // }
+
+    bool update_weather = weather_timer();
     draw_boards(renderer);
 
-    // std::cout<<update_weather<<"\n";
     bool update_daycycle = tick_daycycle();
     if(update_daycycle) current_daycycle = next_daycycle(current_daycycle);
     draw_daycycle(renderer, current_daycycle, SCREEN_X, SCREEN_Y);
     draw_weather(renderer, current_weather, SCREEN_X, SCREEN_Y, update_weather);
     SDL_RenderPresent(renderer);
+    
+    actor_counter++;
     SDL_Delay(1);
 }
 
@@ -76,16 +95,34 @@ int main(int argc, char** args){
     current_weather = Weather_Clear;
 
     /* World Generation */
-    // std::cout << "Generating terrain...\n";
-    board1 = generate_random_Board(DEFAULT_MAP_SIZE_X, DEFAULT_MAP_SIZE_Y);
+    // Test1
+    board1 = generate_random_Board(DEFAULT_MAP_SIZE_X,DEFAULT_MAP_SIZE_Y);
+    // Test 2
+    // board1 = Board(DEFAULT_MAP_SIZE_X, DEFAULT_MAP_SIZE_Y); // generate_random_Board(DEFAULT_MAP_SIZE_X, DEFAULT_MAP_SIZE_Y);
+    // board1.flood_tile(Tiles_get_Tile("grass"));
+
     board1.show_cursor = false;
     overlay_board = Board(DEFAULT_MAP_SIZE_X, DEFAULT_MAP_SIZE_Y);
     add_vegetation_on_grass(DEFAULT_MAP_SIZE_X, DEFAULT_MAP_SIZE_Y, &board1, &overlay_board);
     overlay_board.show_cursor = true;
-    // overlay_board.set_tile(5,5, Tiles_get_Tile("tree"));
-    // overlay_board.set_tile(5, 5, Tiles_get_Tile("clay"));
-    // board1.set_tile(2,2,Tiles_get_Tile("deepwater"));
-    // board1.save("../maps/map1.txt");
+
+    // Item item0 = Item("item0","this is a zeroth item!");
+    // Item item1 = Item("item1","this is a first item!");
+    // Item item2 = Item("item2","this is a second item!");
+    
+    // GameInventory.add(item0);
+    // GameInventory.add(item1);
+    // GameInventory.add(item1);
+    // GameInventory.add(item1);
+    // GameInventory.add(item0);
+    // GameInventory.add(item0);
+    // GameInventory.add(item0);
+    // GameInventory.add(item2);
+    // GameInventory.add(item2);
+    // GameInventory.add(item2);
+    // GameInventory.add(item2);
+
+    // GameInventory.print_all();
 
     /* Keyboard Initialization */
     bool quit = false;
@@ -134,6 +171,9 @@ int main(int argc, char** args){
                 else if(key_pressed=='l') {board1.move_slice(0, 1); overlay_board.move_slice(0, 1);}
                 else if(key_pressed=='k') {board1.move_slice(1, 0); overlay_board.move_slice(1, 0);}
 
+                else if(key_pressed=='h') {
+ 
+                }
                 // /draw(renderer);
             }
             

@@ -96,9 +96,13 @@ Tile::Tile(char icon, const char* texture_path, int num_alt_textures){
 }
 
 Tile::~Tile(){
+    // std::cout << "Ligma nuts\n";
     // SDL_DestroyTexture(this->texture);
     // SDL_FreeSurface(this->texture);
     this->texture = NULL;
+    for (SDL_Surface* s : this->textures) {
+        s=NULL;
+    }
     // delete this->texture;
     // delete this->name;
     // delete this->texture_path;

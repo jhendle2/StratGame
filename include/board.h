@@ -37,8 +37,10 @@ class Board{
 
         void set_tile(int r, int c, Tile t);
         void fill_tile(int r1, int c1, int r2, int c2, Tile t);
+        void remove_tile(int r, int c);
         void flood_tile(Tile t);
         Tile get_tile(int r, int c);
+        void get_neighbors(int r, int c, Tile* left, Tile* right, Tile* up, Tile* down);
         void set_cursor(int r, int c);
         void move_cursor(int r, int c);
         void move_cursor(enum Cursor_Direction direction);

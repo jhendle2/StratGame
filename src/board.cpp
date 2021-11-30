@@ -49,6 +49,7 @@ Board::Board(const char* filename){
 }
 
 Board::~Board(){
+    std::cout << "Destroying board\n";
     this->rows=0;
     this->cols=0;
 }
@@ -86,7 +87,16 @@ int Board::get_cols(){
 }
 
 void Board::set_tile(int r, int c, Tile t){
+    if(r<0 || r>this->rows) return;
+    if(c<0 || c>this->cols) return;
+
     this->tiles[r][c]=t;
+}
+void Board::remove_tile(int r, int c){
+    if(r<0 || r>this->rows) return;
+    if(c<0 || c>this->cols) return;
+
+    this->tiles[r][c]=Tiles_get_Tile("air");
 }
 
 void Board::fill_tile(int r1, int c1, int r2, int c2, Tile t){
@@ -124,10 +134,16 @@ void Board::set_cursor(int r, int c){
 void Board::zoom_in(){
     this->zoom_x++;
     this->zoom_y++;
+    this->slice_size--;
+    // if(this->slice_size<1) this->slice_size=1; // MAYBE NEED?
+    std::cout<<slice_size<<"\n";
 }
 void Board::zoom_out(){
     this->zoom_x--;
     this->zoom_y--;
+    this->slice_size++;
+    // if(this->slice_size>16) this->slice_size=16; // MAYBE NEED?
+    std::cout<<slice_size<<"\n";
 }
 
 void Board::move_slice(int r, int c){
@@ -253,7 +269,7 @@ for(int r = 0; r<rows; r++){
                 Tile cursor = Tiles_get_Tile("cursor");
                 if(cursor.texture != NULL){
                     SDL_Texture * texture = SDL_CreateTextureFromSurface(renderer, cursor.texture);
-                    SDL_Rect dstrect = { x, y, 16*zoom, 16*zoom };
+                    SDL_Rect dstrect = { x, y, cursor.size_x*zoom, cursor.size_y*zoom };
                     SDL_RenderCopy(renderer, texture, NULL, &dstrect);
                     SDL_DestroyTexture(texture); // Keeps the program from crashing :)
                 }
@@ -263,7 +279,7 @@ for(int r = 0; r<rows; r++){
                 if(tile_to_draw.num_alt_textures == 0){
                     if(tile_to_draw.texture != NULL){
                         SDL_Texture * texture = SDL_CreateTextureFromSurface(renderer, tile_to_draw.texture);
-                        SDL_Rect dstrect = { x, y, 16*zoom, 16*zoom };
+                        SDL_Rect dstrect = { x, y, tile_to_draw.size_x*zoom, tile_to_draw.size_x*zoom };
                         SDL_RenderCopy(renderer, texture, NULL, &dstrect);
                         SDL_DestroyTexture(texture); // Keeps the program from crashing :)
                     }
@@ -279,7 +295,7 @@ for(int r = 0; r<rows; r++){
                         if(current_index == rand_index) {
                             // std::cout << current_index << "\t";
                             SDL_Texture * texture = SDL_CreateTextureFromSurface(renderer, *surface_iterator);
-                            SDL_Rect dstrect = { x, y, 16*zoom, 16*zoom };
+                            SDL_Rect dstrect = { x, y, tile_to_draw.size_x*zoom, tile_to_draw.size_x*zoom };
                             SDL_RenderCopy(renderer, texture, NULL, &dstrect);
                             SDL_DestroyTexture(texture); // Keeps the program from crashing :)
                             break;
@@ -309,19 +325,26 @@ void Board::draw_slice_fast(SDL_Renderer* renderer, int x1, int y1, int r1, int 
     if(c2 < 0) c2 =0;
     else if(c2 > cols) c2 = cols;
 
+    // TODO: Why can't we see more of the screen during a zoom out?
+
+    // std::cout<<"r2="<<r2<<" c2="<<c2<<"\n";
+
+    // for(int r = r1; r<r2+2*this->slice_size; r++){
+    //     for(int c = c1; c<c2+this->slice_size; c++){
     for(int r = r1; r<r2; r++){
         for(int c = c1; c<c2; c++){
             int x = x1, y = y1;
             snap_grid_with_zoom(x1, y1, r-r1,c-c1,this->zoom_x,&x,&y);
-            if(x>(screen_size_x-16*this->zoom_x) || y>(screen_size_y-16*this->zoom_y)){
-                break;
-            }
+            // if(x>(screen_size_x-16*this->zoom_x) || y>(screen_size_y-16*this->zoom_y)){
+            //     break;
+            // }
+            // if(x>screen_size_x || y>screen_size_y) break;
 
             if(show_cursor && (r == r_cursor && c == c_cursor) ){
                 Tile cursor = Tiles_get_Tile("cursor");
                 if(cursor.texture != NULL){
                     SDL_Texture * texture = SDL_CreateTextureFromSurface(renderer, cursor.texture);
-                    SDL_Rect dstrect = { x, y, 16*zoom_x, 16*zoom_y };
+                    SDL_Rect dstrect = { x, y, cursor.size_x*zoom_x, cursor.size_y*zoom_y };
                     SDL_RenderCopy(renderer, texture, NULL, &dstrect);
                     SDL_DestroyTexture(texture); // Keeps the program from crashing :)
                 }
@@ -334,7 +357,7 @@ void Board::draw_slice_fast(SDL_Renderer* renderer, int x1, int y1, int r1, int 
                     if(tile_to_draw.texture != NULL){
                         // if(tile_to_draw.icon == TILE_AIR_ICON) return;
                         SDL_Texture * texture = SDL_CreateTextureFromSurface(renderer, tile_to_draw.texture);
-                        SDL_Rect dstrect = { x, y, 16*this->zoom_x, 16*this->zoom_y };
+                        SDL_Rect dstrect = { x, y, tile_to_draw.size_x*this->zoom_x, tile_to_draw.size_y*this->zoom_y };
                         SDL_RenderCopy(renderer, texture, NULL, &dstrect);
                         SDL_DestroyTexture(texture); // Keeps the program from crashing :)
                     }
@@ -350,7 +373,7 @@ void Board::draw_slice_fast(SDL_Renderer* renderer, int x1, int y1, int r1, int 
                         if(current_index == rand_index) {
                             // std::cout << current_index << "\t";
                             SDL_Texture * texture = SDL_CreateTextureFromSurface(renderer, *surface_iterator);
-                            SDL_Rect dstrect = { x, y, 16*zoom_x, 16*zoom_y };
+                            SDL_Rect dstrect = { x, y, tile_to_draw.size_x*zoom_x, tile_to_draw.size_y*zoom_y };
                             SDL_RenderCopy(renderer, texture, NULL, &dstrect);
                             SDL_DestroyTexture(texture); // Keeps the program from crashing :)
                             break;
@@ -407,4 +430,11 @@ void Board::draw_slice(SDL_Renderer* renderer, int screen_size_x, int screen_siz
 
 void Board::draw_slice(SDL_Renderer* renderer, int x1, int y1, int screen_size_x, int screen_size_y){
     this->draw_slice_fast(renderer, x1, y1, this->slice_r, this->slice_c, this->slice_r+2*this->slice_size, this->slice_c+this->slice_size, screen_size_x, screen_size_y);
+}
+
+void Board::get_neighbors(int r, int c, Tile* left, Tile* right, Tile* up, Tile* down){
+    if(c > 0) *left = get_tile(r,c-1);
+    if(r > 0) *up = get_tile(r-1,c);
+    if(c < cols-1) *right = get_tile(r,c+1);
+    if(r < rows-1) *down = get_tile(r+1,c);
 }

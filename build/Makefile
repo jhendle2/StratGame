@@ -285,6 +285,87 @@ src/gamemenu.cpp.s:
 	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/gamemenu.cpp.s
 .PHONY : src/gamemenu.cpp.s
 
+src/gmenu.o: src/gmenu.cpp.o
+
+.PHONY : src/gmenu.o
+
+# target to build an object file
+src/gmenu.cpp.o:
+	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/gmenu.cpp.o
+.PHONY : src/gmenu.cpp.o
+
+src/gmenu.i: src/gmenu.cpp.i
+
+.PHONY : src/gmenu.i
+
+# target to preprocess a source file
+src/gmenu.cpp.i:
+	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/gmenu.cpp.i
+.PHONY : src/gmenu.cpp.i
+
+src/gmenu.s: src/gmenu.cpp.s
+
+.PHONY : src/gmenu.s
+
+# target to generate assembly for a file
+src/gmenu.cpp.s:
+	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/gmenu.cpp.s
+.PHONY : src/gmenu.cpp.s
+
+src/inventory.o: src/inventory.cpp.o
+
+.PHONY : src/inventory.o
+
+# target to build an object file
+src/inventory.cpp.o:
+	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/inventory.cpp.o
+.PHONY : src/inventory.cpp.o
+
+src/inventory.i: src/inventory.cpp.i
+
+.PHONY : src/inventory.i
+
+# target to preprocess a source file
+src/inventory.cpp.i:
+	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/inventory.cpp.i
+.PHONY : src/inventory.cpp.i
+
+src/inventory.s: src/inventory.cpp.s
+
+.PHONY : src/inventory.s
+
+# target to generate assembly for a file
+src/inventory.cpp.s:
+	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/inventory.cpp.s
+.PHONY : src/inventory.cpp.s
+
+src/item.o: src/item.cpp.o
+
+.PHONY : src/item.o
+
+# target to build an object file
+src/item.cpp.o:
+	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/item.cpp.o
+.PHONY : src/item.cpp.o
+
+src/item.i: src/item.cpp.i
+
+.PHONY : src/item.i
+
+# target to preprocess a source file
+src/item.cpp.i:
+	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/item.cpp.i
+.PHONY : src/item.cpp.i
+
+src/item.s: src/item.cpp.s
+
+.PHONY : src/item.s
+
+# target to generate assembly for a file
+src/item.cpp.s:
+	$(MAKE) -f CMakeFiles/framework.dir/build.make CMakeFiles/framework.dir/src/item.cpp.s
+.PHONY : src/item.cpp.s
+
 src/mapgen.o: src/mapgen.cpp.o
 
 .PHONY : src/mapgen.o
@@ -501,6 +582,15 @@ help:
 	@echo "... src/gamemenu.o"
 	@echo "... src/gamemenu.i"
 	@echo "... src/gamemenu.s"
+	@echo "... src/gmenu.o"
+	@echo "... src/gmenu.i"
+	@echo "... src/gmenu.s"
+	@echo "... src/inventory.o"
+	@echo "... src/inventory.i"
+	@echo "... src/inventory.s"
+	@echo "... src/item.o"
+	@echo "... src/item.i"
+	@echo "... src/item.s"
 	@echo "... src/mapgen.o"
 	@echo "... src/mapgen.i"
 	@echo "... src/mapgen.s"

@@ -226,6 +226,45 @@ CMakeFiles/framework.dir/src/actors.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/framework.dir/src/actors.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonah/Documents/GitHub/strat/src/actors.cpp -o CMakeFiles/framework.dir/src/actors.cpp.s
 
+CMakeFiles/framework.dir/src/gmenu.cpp.o: CMakeFiles/framework.dir/flags.make
+CMakeFiles/framework.dir/src/gmenu.cpp.o: ../src/gmenu.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonah/Documents/GitHub/strat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/framework.dir/src/gmenu.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/framework.dir/src/gmenu.cpp.o -c /home/jonah/Documents/GitHub/strat/src/gmenu.cpp
+
+CMakeFiles/framework.dir/src/gmenu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/framework.dir/src/gmenu.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jonah/Documents/GitHub/strat/src/gmenu.cpp > CMakeFiles/framework.dir/src/gmenu.cpp.i
+
+CMakeFiles/framework.dir/src/gmenu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/framework.dir/src/gmenu.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonah/Documents/GitHub/strat/src/gmenu.cpp -o CMakeFiles/framework.dir/src/gmenu.cpp.s
+
+CMakeFiles/framework.dir/src/item.cpp.o: CMakeFiles/framework.dir/flags.make
+CMakeFiles/framework.dir/src/item.cpp.o: ../src/item.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonah/Documents/GitHub/strat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/framework.dir/src/item.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/framework.dir/src/item.cpp.o -c /home/jonah/Documents/GitHub/strat/src/item.cpp
+
+CMakeFiles/framework.dir/src/item.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/framework.dir/src/item.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jonah/Documents/GitHub/strat/src/item.cpp > CMakeFiles/framework.dir/src/item.cpp.i
+
+CMakeFiles/framework.dir/src/item.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/framework.dir/src/item.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonah/Documents/GitHub/strat/src/item.cpp -o CMakeFiles/framework.dir/src/item.cpp.s
+
+CMakeFiles/framework.dir/src/inventory.cpp.o: CMakeFiles/framework.dir/flags.make
+CMakeFiles/framework.dir/src/inventory.cpp.o: ../src/inventory.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonah/Documents/GitHub/strat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/framework.dir/src/inventory.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/framework.dir/src/inventory.cpp.o -c /home/jonah/Documents/GitHub/strat/src/inventory.cpp
+
+CMakeFiles/framework.dir/src/inventory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/framework.dir/src/inventory.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jonah/Documents/GitHub/strat/src/inventory.cpp > CMakeFiles/framework.dir/src/inventory.cpp.i
+
+CMakeFiles/framework.dir/src/inventory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/framework.dir/src/inventory.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonah/Documents/GitHub/strat/src/inventory.cpp -o CMakeFiles/framework.dir/src/inventory.cpp.s
+
 # Object files for target framework
 framework_OBJECTS = \
 "CMakeFiles/framework.dir/main.cpp.o" \
@@ -240,7 +279,10 @@ framework_OBJECTS = \
 "CMakeFiles/framework.dir/src/weather.cpp.o" \
 "CMakeFiles/framework.dir/src/daycycle.cpp.o" \
 "CMakeFiles/framework.dir/src/actor.cpp.o" \
-"CMakeFiles/framework.dir/src/actors.cpp.o"
+"CMakeFiles/framework.dir/src/actors.cpp.o" \
+"CMakeFiles/framework.dir/src/gmenu.cpp.o" \
+"CMakeFiles/framework.dir/src/item.cpp.o" \
+"CMakeFiles/framework.dir/src/inventory.cpp.o"
 
 # External object files for target framework
 framework_EXTERNAL_OBJECTS =
@@ -258,9 +300,12 @@ framework: CMakeFiles/framework.dir/src/weather.cpp.o
 framework: CMakeFiles/framework.dir/src/daycycle.cpp.o
 framework: CMakeFiles/framework.dir/src/actor.cpp.o
 framework: CMakeFiles/framework.dir/src/actors.cpp.o
+framework: CMakeFiles/framework.dir/src/gmenu.cpp.o
+framework: CMakeFiles/framework.dir/src/item.cpp.o
+framework: CMakeFiles/framework.dir/src/inventory.cpp.o
 framework: CMakeFiles/framework.dir/build.make
 framework: CMakeFiles/framework.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jonah/Documents/GitHub/strat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable framework"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jonah/Documents/GitHub/strat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable framework"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/framework.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

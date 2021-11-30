@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../include/actor.h
+../include/board.h
 tile.h
 -
 
@@ -16,8 +16,30 @@ vector
 SDL.h
 -
 
-/home/jonah/Documents/GitHub/strat/src/actor.cpp
-actor.h
+../include/tt.h
+tile.h
+-
+
+../include/utils.h
+
+/home/jonah/Documents/GitHub/strat/src/board.cpp
+SDL.h
+-
+iostream
+-
+fstream
+-
+string
+-
+vector
+-
+stdlib.h
+-
+board.h
+-
+tt.h
+-
+utils.h
 -
 
 /usr/include/SDL2/SDL.h

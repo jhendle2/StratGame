@@ -5,7 +5,7 @@
 
 std::vector<Tile> Tiles;
 
-Tile Tile_air = Tile(TILE_AIR_ICON,"air","",Tile_Type_Air);
+Tile Tile_air = Tile(TILE_AIR_ICON,"air","air",Tile_Type_Air);
 
 Tile Tiles_get_Tile(const char* name){
     for(Tile t : Tiles){
@@ -67,6 +67,10 @@ bool Tile_is_Water(Tile t){
 
 bool Tile_is_Grass(Tile t){
     return Tile_is(t, "grass");
+}
+
+bool Tile_is_Air(Tile t){
+    return Tile_is(t, "air");
 }
 
 bool Tile_is_Vegetation(Tile t){

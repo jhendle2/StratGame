@@ -12,7 +12,7 @@ project (framework)
 
 add_executable(framework main.cpp src/board.cpp src/player.cpp src/spritesheet.cpp src/tile.cpp
 src/utils.cpp src/tt.cpp src/mapgen.cpp src/gamemenu.cpp src/weather.cpp src/daycycle.cpp
-src/actor.cpp src/actors.cpp)
+src/actor.cpp src/actors.cpp src/gmenu.cpp src/item.cpp src/inventory.cpp)
 # add_subdirectory(framework src)
 
 # For finding our SDL2 package!
